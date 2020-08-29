@@ -6,8 +6,8 @@ __author__='pepekiko@gmail.com'
 import unittest
 import os
 
-from common.logger import Log
-from common.loggerLevel import LoggerMinumLevel as level
+from commoneasytools.logger import Log
+from commoneasytools.loggerLevel import LoggerMinumLevel as level
 
 class TestLogger(unittest.TestCase):
     

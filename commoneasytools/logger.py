@@ -8,7 +8,7 @@ import os
 import sys
 from datetime import datetime
 from enum import Enum
-from common.loggerLevel import LoggerMinumLevel
+from commoneasytools.loggerLevel import LoggerMinumLevel
 
 class Log(object):
     """

@@ -4,8 +4,8 @@
 __author__='pepekiko@gmail.com'
 
 import json.scanner
-from common.resultOperation import ResultOperationEntity
-from common.resultType import ResultOperationType
+from commoneasytools.resultOperation import ResultOperationEntity
+from commoneasytools.resultType import ResultOperationType
 
 class ResultData(object):
     """
