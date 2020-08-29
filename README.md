@@ -1,2 +1,2 @@
-# commoneasytools
+# CommonEasyTools
 Common Easy Tools
