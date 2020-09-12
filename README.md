@@ -12,17 +12,53 @@ from commoneasytools.logger import Log
 from commoneasytools.loggerLevel import LoggerMinumLevel as level
 ```
 
+### __Setting to file__
+
 *   We need import two libraries. First contain initialize of logger. Second contains an enum with minum level for declare when we call to constructor.
 
 For use it, we can look this sample:
 
 ```py
-lg = Log(loggerPath='%s/%s'%(os.path.abspath(__file__ + "/../../"),'FolderName'),loggerFileName='LoggerFileName',minimunLevel=level.DEBUG).get()  
+localpath = '%s/%s'%(os.path.dirname(__file__),'Log')
+lg = Log().settingToFile(loggerPath=localpath,loggerFileName='Test',minimunLevel=level.DEBUG)
 lg.info('Test Dummy') 
 ```
 
 *   First we initialize the constructor. We send Path target of log, name of log, minimun level and we call method get for recovery logger properties.
 *   Second we can use properties of logger for write logs.
+
+### __Setting to logstash__
+
+
+For use it, we can look this sample:
+
+```py
+import sys
+
+hostLogstash = '127.0.0.1'
+portLogstash = 5959
+lg = Log().settingToLogstash(host=hostLogstash,port=portLogstash,minimunLevel=level.DEBUG)
+extraData = {
+    'Field1': 'python version: ' + repr(sys.version_info),
+    'FieldCustom2': True,
+    'FieldCustom3': {'a': 1, 'b': 'c'}
+}
+lg.info(msg='Test Dummy',extra=extraData) 
+```
+
+>   Remember, For use this configuration you need have correctly configurated logstash.
+
+```
+logstash.conf
+
+
+input {
+  tcp {
+    port => <listenPort. It's same that you send in request parameters>
+    codec => json
+  }
+}
+```
 
 ##  __ResultData__
 
