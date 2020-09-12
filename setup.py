@@ -1,15 +1,10 @@
 #! usr/bin/python
 # -*- coding: utf-8 *-* 
-import os
 from distutils.core import setup
-
-with open('requirements.txt') as f:
-    required = f.read().splitlines()
-    
 setup(
     name = 'commoneasytools',
     packages = ['commoneasytools'],
-    version = '0.1.3',
+    version = '0.1.4',
     description = 'Common Easy Tools',
     author = 'José Fº Queija',
     author_email = 'pepekiko@gmail.com',
