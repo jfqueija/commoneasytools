@@ -9,7 +9,7 @@ with open('requirements.txt') as f:
 setup(
     name = 'commoneasytools',
     packages = ['commoneasytools'],
-    version = '0.1.2',
+    version = '0.1.3',
     description = 'Common Easy Tools',
     author = 'José Fº Queija',
     author_email = 'pepekiko@gmail.com',
@@ -30,5 +30,5 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
     ],
-    install_requires=required,    
+    install_requires=['python-logstash']
 )
