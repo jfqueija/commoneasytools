@@ -4,12 +4,12 @@ from distutils.core import setup
 setup(
     name = 'commoneasytools',
     packages = ['commoneasytools'],
-    version = '0.1.4',
+    version = '0.1.5',
     description = 'Common Easy Tools',
     author = 'José Fº Queija',
     author_email = 'pepekiko@gmail.com',
     url = 'https://github.com/jfqueija/commoneasytools',
-    download_url = 'https://github.com/jfqueija/commontools/tarball/0.1.1',
+    download_url = 'https://github.com/jfqueija/commontools/tarball/0.1.5',
     keywords = ['Common','Easy','Tools','Result','Model','Logger'],    
     classifiers = [  
         # Optional
@@ -17,7 +17,7 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
