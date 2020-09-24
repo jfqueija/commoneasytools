@@ -4,13 +4,13 @@ from distutils.core import setup
 setup(
     name = 'commoneasytools',
     packages = ['commoneasytools'],
-    version = '0.1.5',
+    version = '0.1.6',
     description = 'Common Easy Tools',
     author = 'José Fº Queija',
     author_email = 'pepekiko@gmail.com',
     url = 'https://github.com/jfqueija/commoneasytools',
-    download_url = 'https://github.com/jfqueija/commontools/tarball/0.1.5',
-    keywords = ['Common','Easy','Tools','Result','Model','Logger'],    
+    download_url = 'https://github.com/jfqueija/commontools/tarball/0.1.6',
+    keywords = ['commoneasytools','Common','Easy','Tools','Result','Model','Logger'],    
     classifiers = [  
         # Optional
         # How mature is this project? Common values are

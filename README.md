@@ -53,7 +53,7 @@ logstash.conf
 
 
 input {
-  tcp {
+  udp {
     port => <listenPort. It's same that you send in request parameters>
     codec => json
   }
