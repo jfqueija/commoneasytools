@@ -60,6 +60,27 @@ input {
 }
 ```
 
+####  __doExtraLogger__
+
+This method was implemented for provide a easy system for create a extra logger information.
+When we declare logger with logstash configuration, we can use this method. 
+
+__Example use:__
+
+```py
+from commoneasytools.logger import Log as lg
+lg().doExtraLogger(appName='App Dummy',methodName='Method Dummy',className='Class Dummy',inheritedFrom='Principal App Name')
+```
+
+If you need add more information, you can look this other example:
+
+```py
+from commoneasytools.logger import Log as lg
+lg().doExtraLogger(appName='App Dummy',methodName='Method Dummy',className='Class Dummy',inheritedFrom='Principal App Name',kwargs={'Result':'Result Value Dummy'})
+```
+
+> In kwargs you can add additional information. Remember, kwargs is a dictionary.
+
 ##  __ResultData__
 
 This class provide an structure for encapsulate dynamics models put in Content Property. We can add results with menssage and result type. When select a Error result type, the property HasErrors take true value. 
