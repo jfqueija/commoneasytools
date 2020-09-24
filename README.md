@@ -68,15 +68,15 @@ When we declare logger with logstash configuration, we can use this method.
 __Example use:__
 
 ```py
-from commoneasytools.logger import Log as lg
-lg().doExtraLogger(appName='App Dummy',methodName='Method Dummy',className='Class Dummy',inheritedFrom='Principal App Name')
+from commoneasytools.common import Common as cm
+cm().doExtraLogger(appName='App Dummy',methodName='Method Dummy',className='Class Dummy',inheritedFrom='Principal App Name')
 ```
 
 If you need add more information, you can look this other example:
 
 ```py
-from commoneasytools.logger import Log as lg
-lg().doExtraLogger(appName='App Dummy',methodName='Method Dummy',className='Class Dummy',inheritedFrom='Principal App Name',kwargs={'Result':'Result Value Dummy'})
+from commoneasytools.common import Common as cm
+cm().doExtraLogger(appName='App Dummy',methodName='Method Dummy',className='Class Dummy',inheritedFrom='Principal App Name',kwargs={'Result':'Result Value Dummy'})
 ```
 
 > In kwargs you can add additional information. Remember, kwargs is a dictionary.

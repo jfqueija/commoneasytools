@@ -78,22 +78,3 @@ class Log(object):
         else:
             levelSelected = logging.DEBUG
         return levelSelected
-
-    def doExtraLogger(self,appName:str,methodName:str,className:str,inheritedFrom:str,*args, **kwargs):
-        """
-            Public method used for construct dictionary with extra information send to logger.
-            :param appName: string
-            :param methodName: string
-            :param className: string
-            :param inheritedFrom: string
-            :param args: extra data
-            :param kwargs: extra dictionary
-        """
-        extra = dict()
-        extra["AppName"] = appName
-        extra["Class"] = className
-        extra["Method"] = methodName
-        extra["inheritedFrom"] = inheritedFrom
-        if kwargs:
-            extra.update(kwargs['kwargs'])
-        return extra
