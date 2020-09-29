@@ -120,3 +120,47 @@ Sample output:
 ```json
 {"Content": {"Name": "Jhon", "Surname": "Doe", "User": "UserDummy"}, "HasErrors": false, "ResultOperationEntities": [{"Message": "Successfully operation", "ResultType": {"name": "SUCCESS", "value": 3}}]}
 ```
+
+##  __DictionaryReader__
+
+This class is used for provide an easy system to reader a dictionary using attributes.
+
+__Use Example:__
+
+> From dict
+
+```py
+from commoneasytools.dictionary import DictionaryReader
+
+dict_dummy = {
+    "Entry_1":"Dummy data",
+    "Entry_2" : {
+        "Sub_Entry_2_1":"Dummy data sub entry",
+        "Sub_Entry_2_2":{
+          "Sub_Entry_2_2_1":"Dummy data sub entry 2 1",
+        }        
+    }
+}
+
+d = DictionaryReader(config_file=dict_dummy)
+value_entry1 = d.Entry_1.get()
+value_entry2 = d.Entry_2.Sub_Entry_2_2.Sub_Entry_2_2_1.get()
+print(value_entry1)
+print(value_entry2)
+```
+
+> From file
+```py
+import json
+from commoneasytools.dictionary import DictionaryReader
+
+path = '%s/%s'%(os.path.dirname(__file__),'file.json')
+with open(path, encoding='utf-8') as json_file:                
+    config_file = json.load(json_file)  
+
+d = DictionaryReader(config_file=config_file)
+value_entry1 = d.Entry_1.get()
+value_entry2 = d.Entry_2.Sub_Entry_2_2.Sub_Entry_2_2_1.get()
+print(value_entry1)
+print(value_entry2)
+```
