@@ -4,7 +4,7 @@ from distutils.core import setup
 setup(
     name = 'commoneasytools',
     packages = ['commoneasytools'],
-    version = '0.1.8',
+    version = '0.1.9',
     description = 'Common Easy Tools',
     author = 'José Fº Queija',
     author_email = 'pepekiko@gmail.com',

@@ -13,6 +13,7 @@ class ObjectEncoder(json.JSONEncoder):
             from common.jsonEncoder import ObjectEncoder as obEncoder
             json.dumps(result,cls=obEncoder,sort_keys=True)
         Note: Result is an object.
+        For use with SQLAlchemy, added filter key not equals to metadata.
     """
     def default(self, obj):
         if hasattr(obj, "to_json"):
@@ -21,7 +22,7 @@ class ObjectEncoder(json.JSONEncoder):
             d = dict(
                 (key, value)
                 for key, value in inspect.getmembers(obj)
-                if not key.startswith("__") and not key.startswith("_")
+                if not key.startswith("__") and not key.startswith("_") and not key == "metadata"
                 and not inspect.isabstract(value)
                 and not inspect.isbuiltin(value)
                 and not inspect.isfunction(value)
