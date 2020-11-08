@@ -121,6 +121,9 @@ Sample output:
 {"Content": {"Name": "Jhon", "Surname": "Doe", "User": "UserDummy"}, "HasErrors": false, "ResultOperationEntities": [{"Message": "Successfully operation", "ResultType": {"name": "SUCCESS", "value": 3}}]}
 ```
 
+> Fixed bug for serialize database objects returned by SQLAlchemy. Version 0.1.9
+
+
 ##  __DictionaryReader__
 
 This class is used for provide an easy system to reader a dictionary using attributes.
