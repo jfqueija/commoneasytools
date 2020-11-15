@@ -167,3 +167,59 @@ value_entry2 = d.Entry_2.Sub_Entry_2_2.Sub_Entry_2_2_1.get()
 print(value_entry1)
 print(value_entry2)
 ```
+
+##  __Common__
+
+Added two method for do operations over dictionaries.
+
+This two methods was added for operate with SqlAlchemy but you can use on other operations.
+
+
+### __Convert from objecto to dictionary__
+
+```py
+from commoneasytools.common import Common
+
+class Test(object):
+  field1:int
+  field2:str
+  def __init__(self, field_1:int, field_2:str):
+    self.field1=field_1
+    self.field2=field_2
+
+object_test:object = Test(1,'Jhon')
+result:dict = Common().object_to_dictionary(model=Test)
+```
+
+> Result:
+
+```py
+{'field1':1,'field2':'Jhon'}
+```
+
+> Important:
+>> We do conversion over a clone of object, never we will do operation over principal object. 
+
+
+### __Remove properties of dictionary__
+
+```py
+from commoneasytools.common import Common
+
+class Test(object):
+  field1:int
+  field2:str
+  def __init__(self, field_1:int, field_2:str):
+    self.field1=field_1
+    self.field2=field_2
+
+object_test:object = Test(1,'Jhon')
+result:dict = Common().remove_property(target=Test,prop=['field1'])
+```
+
+> Result:
+
+```py
+{'field2':'Jhon'}
+```
+

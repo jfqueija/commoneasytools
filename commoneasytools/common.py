@@ -4,6 +4,7 @@
 __author__='pepekiko@gmail.com'
 
 from os import name
+from copy import deepcopy
 
 class Common(object):
     """
@@ -42,3 +43,29 @@ class Common(object):
         if kwargs:
             extra.update(kwargs['kwargs'])
         return extra
+
+    def remove_property(self,target: dict,prop:[]) -> dict:
+        """
+            Method used for remove properties from a dictionary
+            :param target: dict. Dictionary over that we can do changes
+            :para prop: []. Properties of dictionary that we will remove inside.
+        """        
+        try:
+            for p in prop:
+                del target[p]
+        except Exception:
+            pass
+        return target
+
+    def object_to_dictionary(self,model:object)->dict:
+        """
+            Method used for convert model into dictionary
+            :param model: object. Object over that we can do conversion to dictionary. Previously we do an copy and convert this copy.
+        """ 
+        result:dict = dict()       
+        try:
+            bck_model = deepcopy(model)
+            result = bck_model.__dict__
+        except Exception:
+            pass
+        return result
