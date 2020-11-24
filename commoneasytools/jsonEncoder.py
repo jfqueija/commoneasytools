@@ -33,4 +33,6 @@ class ObjectEncoder(json.JSONEncoder):
                 and not inspect.isroutine(value)
             )
             return self.default(d)
+        elif hasattr(obj,"date"):
+            return obj.isoformat()
         return obj
